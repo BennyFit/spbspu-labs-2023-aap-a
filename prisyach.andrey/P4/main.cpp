@@ -98,7 +98,6 @@ int main(int argc, char * argv[])
   prisyach::transformMatrix(matrix, rows, cols);
   output_file << rows << " " << cols << " ";
   prisyach::outputMatrix(output_file, matrix, rows, cols);
-  
 
   if (task_number == 2)
   {
