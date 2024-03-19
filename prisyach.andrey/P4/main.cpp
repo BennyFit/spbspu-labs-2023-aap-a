@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <cstddef>
 #include <stdexcept>
 
 int main(int argc, char * argv[])
@@ -92,7 +93,12 @@ int main(int argc, char * argv[])
     return 2;
   }
 
-  int result = prisyach::findMaxSequence(matrix, rows, cols);
+  size_t result = prisyach::findMaxSequence(matrix, rows, cols);
+  output_file << result + 1 << " ";
+  prisyach::transformMatrix(matrix, rows, cols);
+  output_file << rows << " " << cols << " ";
+  prisyach::outputMatrix(output_file, matrix, rows, cols);
+  
 
   if (task_number == 2)
   {
@@ -105,6 +111,6 @@ int main(int argc, char * argv[])
     return 2;
   }
 
-  output_file << result + 1 << "\n";
+  //output_file << result + 1 << "\n";
   return 0;
 }
